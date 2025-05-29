@@ -1,0 +1,3 @@
+mixin main-btn(data)
+  if data.type == 'button'
+    button.main-btn(type="button" class= data.modifiers ? data.modifiers : null)!= data.text

@@ -1,0 +1,19 @@
+include ./main-head
+
+doctype html
+
+block variables
+
+html(lang="ru")
+ +main-head(title, description)
+
+include ./header/template
+#smooth-wrapper
+  #smooth-content
+
+    main
+      block content
+
+    //- include ./footer/template
+
+    //- block modals

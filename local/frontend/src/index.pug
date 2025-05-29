@@ -1,0 +1,18 @@
+extends ./pug/layouts/main-layout
+
+block variables
+  -
+    const title = "nm-site-builder"
+    const description = ""
+    const keywords = ""
+    const styles = ['./styles/template-styles','./styles/dev']
+
+block content
+  include ./pug/blocks/hero-section/template
+  include ./pug/blocks/about-preview/template
+
+  section.workup-section(style="height: 1000vh;")
+    .container
+      span workup-section
+  
+  
