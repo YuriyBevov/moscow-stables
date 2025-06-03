@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				end: "+=120%", // когда низ элемента достигнет центра viewport
 				scrub: true, // плавная анимация при скролле
 				markers: true, // раскомментируйте для отладки (покажет маркеры)
+				invalidateOnRefresh: true,
 			},
 		},
 	);
@@ -88,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				start: "center", // когда верх элемента достигнет центра viewport
 				end: "+=30%", // когда низ элемента достигнет центра viewport
 				scrub: true, // плавная анимация при скролле
-				markers: true, // раскомментируйте для отладки (покажет маркеры)
+				markers: true, // раскомментируйте для отладки (покажет маркеры),
+				invalidateOnRefresh: true,
 				onUpdate: (self) => {
 					if (self.progress > 0.45) {
 						textAnimation.play();

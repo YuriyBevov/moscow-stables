@@ -36,7 +36,9 @@ h1 {
 
 h2,
 .base-title {
-	font-size: clamp(24px, 6vw, 48px);
+	font-family: var(--secondary-font);
+	font-size: clamp(24px, 8vw, 72px);
+	color: var(--primary-color);
 }
 
 h3 {

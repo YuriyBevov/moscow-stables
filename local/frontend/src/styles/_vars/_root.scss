@@ -1,14 +1,16 @@
 // fonts
 :root {
-	--montserrat: "Montserrat", sans-serif;
+	// --montserrat: "Montserrat", sans-serif;
+	--primary-font: "Comfortaa", sans-serif;
+	--secondary-font: "Belozersk", sans-serif;
 }
 
 // colors
 :root {
 	--white-color: #ffffff;
 	--black-color: #000000;
-	--primary-color: #f9bc48;
-	--secondary-color: #f3a86a;
+	--primary-color: #ffc046;
+	--secondary-color: #faf5ef;
 	--success-color: #59a952;
 	--warning-color: #fffc30;
 	--danger-color: #da1c1f;
@@ -17,6 +19,7 @@
 	--lighter-color: #f4f4f4;
 	--muted-color: #c8c8c8;
 	--gray-500-color: #555555;
+	--olive-color: #595407;
 }
 
 // containers
@@ -38,7 +41,7 @@
 
 // site-base-options
 :root {
-	--site-base-font-family: var(--montserrat);
+	--site-base-font-family: var(--primary-font);
 	--site-base-font-weight: 400;
 	--site-base-font-size: 16px;
 	--site-base-line-height: 1.2;
