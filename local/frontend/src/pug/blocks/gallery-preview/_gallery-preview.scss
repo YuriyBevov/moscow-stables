@@ -1,0 +1,33 @@
+.gallery-preview {
+	position: relative;
+	margin-top: -30vh;
+}
+
+.gallery-preview-wrapper {
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: var(--lighter-color);
+	will-change: transform, width, height;
+}
+
+.circle {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 30px;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		will-change: scale, transform;
+	}
+}

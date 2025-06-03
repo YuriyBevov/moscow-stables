@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 let resizeTimeout;
 
 function initHorizontalScroll() {
-	const section = document.querySelector(".events");
+	const section = document.querySelector(".events-preview");
 	const cardsContainer = document.getElementById(
 		"events-preview-scroll-container",
 	);

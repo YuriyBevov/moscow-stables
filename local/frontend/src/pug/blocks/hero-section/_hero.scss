@@ -5,10 +5,8 @@
 .hero {
 	display: flex;
 	flex-direction: column;
-	// gap: calc(5vh + 32px);
 	gap: 32px;
 	position: relative;
-	// outline: 1px solid red;
 
 	&-title {
 		display: flex;
@@ -23,14 +21,11 @@
 		justify-content: center;
 		align-items: center;
 
-		// outline: 1px solid red;
-
 		img {
 			object-fit: contain;
 			width: 100%;
 			max-width: 1400px;
 			height: auto;
-			// outline: 1px solid blue;
 			will-change: transform, opacity;
 		}
 	}
@@ -60,7 +55,6 @@
 		gap: calc(32px);
 		text-align: center;
 		padding: calc(2vw + 20px);
-		// outline: 1px solid red;
 		max-width: 1440px;
 		margin: 0 auto;
 	}
