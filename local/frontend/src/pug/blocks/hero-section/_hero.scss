@@ -66,9 +66,9 @@
 	}
 
 	&-text {
-		font-size: calc(1.6vw + 1vh);
+		font-size: clamp(24px, 8vw, 36px);
 		overflow: hidden;
-		line-height: 0.95;
+		line-height: 1.1;
 	}
 
 	&-btn-row {
