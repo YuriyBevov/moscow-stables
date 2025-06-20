@@ -1,0 +1,21 @@
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.base-section {
+	margin-bottom: clamp(80px, 20vw, 240px);
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		margin-bottom: clamp(32px, 5vw, 120px);
+
+		.base-text {
+			font-size: 24px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+mixin horse-preview-card(data)
+  .swiper-slide
+    .horse-preview-card
+      img(src=`./assets/img/${data.image}.png` alt="" width="500" height="500")
+      .horse-preview-card__content
+        a(href="#").horse-preview-card__content-title!= data.content.title
+        
+        ul
+          each item in data.content.chars
+            li
+              strong!= item.name
+              span!= item.value
+        
+        a(href="") Подробнее
+
+section.horses-preview.base-section
+  .container
+    .base-section__header
+      h2.base-title Наши лошади
+
+    .swiper-container
+      .swiper.horses-preview-slider
+        .swiper-wrapper
+          each item in [1,2,3,4]
+            +horse-preview-card({
+              image: 'services-previw-card-bg6',
+              content: {
+                title: 'Грей',
+                chars: [
+                  {
+                    name: 'Пол:',
+                    value: 'Жеребец'
+                  },
+                  {
+                    name: 'Порода:',
+                    value: 'Тракененская'
+                  },
+                  {
+                    name: 'Масть:',
+                    value: 'Серая в яблоках'
+                  },
+                  {
+                    name: 'Возраст:',
+                    value: '8 лет'
+                  },
+                  {
+                    name: 'Специализация:',
+                    value: 'PRO (выездка, конкур)'
+                  },
+                  {
+                    name: 'Характер:',
+                    value: 'Энергичный, но послушный, любит работать в контакте с всадником'
+                  },
+                  {
+                    name: 'Подходит для:',
+                    value: 'Спортивных тренировок (выездка, конкурc).Продвинутых всадников.Участия в соревнованиях'
+                  },
+                ]
+              }
+            })
+            +horse-preview-card({
+              image: 'services-previw-card-bg4',
+              content: {
+                title: 'Александр Македонский',
+                chars: [
+                  {
+                    name: 'Пол:',
+                    value: 'Жеребец'
+                  },
+                  {
+                    name: 'Порода:',
+                    value: 'Тракененская'
+                  },
+                  {
+                    name: 'Масть:',
+                    value: 'Серая в яблоках'
+                  }
+                ]
+              }
+            })
+          
+      .swiper-controls
+        button(type="button" aria-label="Назад").swiper-button.swiper-button-prev
+          img(src="./assets/img/slider-arrow-left.png" alt="" width="60" height="40")
+        button(type="button" aria-label="Вперед").swiper-button.swiper-button-next
+          img(src="./assets/img/slider-arrow-right.png" alt="" width="60" height="40")
+
+
+
+
+
+
+

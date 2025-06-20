@@ -1,0 +1,30 @@
+.coach-preview {
+	position: relative;
+	outline: 1px solid red;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		max-width: 30vw;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		background-image: url("@img/horses-decor-left.png");
+		background-position: top;
+	}
+
+	&::after {
+		top: 200px;
+		right: 0;
+		background-image: url("@img/horses-decor-right.png");
+		background-position: bottom;
+	}
+}

@@ -1,0 +1,30 @@
+mixin service-card(title, image)
+  .services-preview__grid-item
+    a(href="#").services-preview-card
+      img(src=`./assets/img/${image}.png` alt="")
+      span.services-preview-card__title= title
+
+section.services-preview.base-section
+  .container
+    .base-section__header
+      //- img(src="./assets/img/horseshoe.svg" alt="" width="300" height="300")
+      h2.base-title Наши Услуги
+      p.base-text Подарите себе и близким радость общения с умнейшими животными и активный отдых на свежем воздухе!
+
+    .services-preview__grid
+      //- top-row
+      +service-card("Профессиональный конный спорт", "services-previw-card-bg1")
+      +service-card("Иппотерапия", "services-previw-card-bg2")
+      +service-card("Прогулка в парке", "services-previw-card-bg3")
+      +service-card("Экскурсия на конюшню", "services-previw-card-bg4")
+
+      //- middle-row
+      +service-card("Катание верхом для детей", "services-previw-card-bg5")
+      +service-card("Школа верховой езды и специализация PRO", "services-previw-card-bg6")
+      +service-card("Аренда лошадей", "services-previw-card-bg7")
+
+      //- bottom-row
+      +service-card("Постой лошадей", "services-previw-card-bg8")
+      +service-card("Школа верховой езды", "services-previw-card-bg9")
+      +service-card("Сертификаты", "services-previw-card-bg10")
+      +service-card("Фотосессия с лошадьми", "services-previw-card-bg11")

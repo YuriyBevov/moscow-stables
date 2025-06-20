@@ -96,3 +96,16 @@ picture,
 img {
 	display: flex;
 }
+
+.gsap-split-word {
+	display: inline-block;
+	white-space: nowrap; // Предотвращаем перенос внутри слова
+	will-change: color;
+	transition: color 0.1s ease; // fallback для браузеров без GSAP
+}
+
+.gsap-split-char {
+	display: inline-block;
+	will-change: color;
+	transition: color 0.1s ease; // fallback для браузеров без GSAP
+}
