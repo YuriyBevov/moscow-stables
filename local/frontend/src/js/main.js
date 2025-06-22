@@ -7,4 +7,5 @@ import "@pug/blocks/coach-preview/coach-preview";
 // import "@pug/blocks/gallery-preview/gallery-preview";
 // import "@pug/blocks/gallery-preview/gallery-preview-slider";
 import "@pug/blocks/features/features";
+import "@pug/components/static/transition-block/transition-block";
 // import "./gsap/test";

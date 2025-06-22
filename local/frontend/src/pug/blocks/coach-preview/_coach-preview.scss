@@ -1,30 +1,109 @@
-.coach-preview {
-	position: relative;
-	outline: 1px solid red;
+// .gallery {
+// 	position: relative;
+// 	min-height: 600px;
+// 	background-color: var(--white-color);
 
-	&::before,
-	&::after {
-		position: absolute;
-		content: "";
-		width: 100%;
-		max-width: 30vw;
-		height: 100%;
-		background-size: contain;
-		background-repeat: no-repeat;
-		z-index: -1;
-	}
+// 	// CSS переменная для высоты эллипса
+// 	--ellipse-height: 0%;
 
-	&::before {
-		top: 0;
-		left: 0;
-		background-image: url("@img/horses-decor-left.png");
-		background-position: top;
-	}
+// 	&::before,
+// 	&::after {
+// 		position: absolute;
+// 		left: 50%;
+// 		transform: translateX(-50%);
+// 		width: 120%;
+// 		height: 140px;
+// 		content: "";
+// 		background-color: var(--dark-color);
+// 		z-index: 10;
+// 	}
 
-	&::after {
-		top: 200px;
-		right: 0;
-		background-image: url("@img/horses-decor-right.png");
-		background-position: bottom;
-	}
-}
+// 	&::before {
+// 		top: -30px;
+// 		// Используем CSS переменную для анимации
+// 		clip-path: ellipse(50% 100% at 50% 0%);
+// 	}
+
+// 	&::after {
+// 		bottom: -30px;
+// 		clip-path: ellipse(50% 100% at 50% 100%);
+// 	}
+
+// 	.container {
+// 		position: relative;
+// 		z-index: 2;
+// 	}
+// }
+
+// .gallery__grid {
+// 	display: grid;
+// 	grid-template-columns: repeat(4, 1fr);
+// 	gap: 5px;
+// 	height: 100%; // Фиксированная высота для overflow
+// 	max-height: 80vh;
+// 	overflow: hidden;
+// 	padding: 20px 0;
+// }
+
+// .gallery-grid-column {
+// 	position: relative;
+// 	height: 100%;
+// 	overflow: hidden;
+
+// 	// Создаем обертку для бесконечного скролла
+// 	// &::before {
+// 	// 	content: "";
+// 	// 	position: absolute;
+// 	// 	top: 0;
+// 	// 	left: 0;
+// 	// 	right: 0;
+// 	// 	bottom: 0;
+// 	// 	pointer-events: none;
+// 	// 	z-index: 1;
+// 	// }
+
+// 	// Контейнер для изображений
+// 	.column-content {
+// 		display: flex;
+// 		flex-direction: column;
+// 		gap: 5px;
+// 		will-change: transform;
+// 	}
+
+// 	// Для четных колонок позиционируем контент снизу
+// 	&:nth-child(even) {
+// 		.column-content {
+// 			align-items: flex-end;
+// 			justify-content: flex-end;
+// 		}
+// 	}
+
+// 	img {
+// 		width: 100%;
+// 		height: auto;
+// 		object-fit: contain;
+// 		border-radius: 12px;
+// 		transition: transform 0.3s ease;
+// 		flex-shrink: 0;
+// 	}
+// }
+
+// // Адаптивность
+// @media (max-width: 768px) {
+// 	.gallery__grid {
+// 		grid-template-columns: repeat(2, 1fr);
+// 		gap: 15px;
+// 		// height: 400px;
+// 	}
+
+// 	.gallery-grid-column img {
+// 		height: auto;
+// 	}
+// }
+
+// @media (max-width: 480px) {
+// 	.gallery__grid {
+// 		grid-template-columns: 1fr;
+// 		// height: 300px;
+// 	}
+// }

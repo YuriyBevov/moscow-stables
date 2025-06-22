@@ -1,0 +1,16 @@
+section.gallery
+  img(src="../assets/img/main-logo.svg" alt="" width="300" height="200").gallery-logo
+  .container
+    .gallery__grid
+      .gallery-grid-column.gallery-column--odd(data-direction="up")
+        each i in [1, 2]
+          img(src=`./assets/img/services-previw-card-bg${i}.png` alt="" width="100%" height="300px")
+      .gallery-grid-column.gallery-column--even(data-direction="down")
+        each i in [6,7]
+          img(src=`./assets/img/services-previw-card-bg${i}.png` alt="" width="100%" height="300px")
+      .gallery-grid-column.gallery-column--odd(data-direction="up")
+        each i in [1, 2, 4]
+          img(src=`./assets/img/services-previw-card-bg${i}.png` alt="" width="100%" height="300px")
+      .gallery-grid-column.gallery-column--even(data-direction="down")
+        each i in [6,7,8]
+          img(src=`./assets/img/services-previw-card-bg${i}.png` alt="" width="100%" height="300px")
