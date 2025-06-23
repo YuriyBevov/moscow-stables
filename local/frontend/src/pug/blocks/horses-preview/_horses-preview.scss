@@ -26,60 +26,59 @@
 		background-image: url("@img/horses-decor-right.png");
 		background-position: bottom;
 	}
-}
 
-.swiper-container {
-	position: relative;
-	backdrop-filter: blur(10px);
-	border: 2px solid var(--primary-color);
+	.swiper-container {
+		position: relative;
+		backdrop-filter: blur(10px);
+		border: 2px solid var(--primary-color);
 
-	&::before {
-		bottom: 15px;
-		left: 15px;
-	}
+		&::before {
+			bottom: 15px;
+			left: 15px;
+		}
 
-	&::after {
-		top: 15px;
-		right: 15px;
-	}
+		&::after {
+			top: 15px;
+			right: 15px;
+		}
 
-	&::before,
-	&::after {
-		position: absolute;
-		width: 10px;
-		height: 10px;
-		content: "";
-		background-color: var(--primary-color);
-		border-radius: 50%;
-		z-index: 3;
-	}
+		&::before,
+		&::after {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			content: "";
+			background-color: var(--primary-color);
+			border-radius: 50%;
+			z-index: 3;
+		}
 
-	.swiper-controls {
-		display: flex;
-		align-items: center;
-		gap: 24px;
-		position: absolute;
-		bottom: -38px;
-		padding: 10px 25px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: fit-content;
-		z-index: 11;
-		background-color: var(--dark-color);
-		// outline: 1px solid red;
+		.swiper-controls {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+			position: absolute;
+			bottom: -38px;
+			padding: 10px 25px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: fit-content;
+			z-index: 11;
+			background-color: var(--dark-color);
 
-		.swiper-button {
-			padding: 5px;
-			border: none;
-			background-color: transparent;
+			.swiper-button {
+				padding: 5px;
+				border: none;
+				background-color: transparent;
 
-			&-disabled {
-				opacity: 0.5;
-			}
-			img {
-				width: 70px;
-				height: auto;
-				object-fit: contain;
+				&-disabled {
+					opacity: 0.5;
+				}
+				img {
+					width: 70px;
+					height: auto;
+					object-fit: contain;
+				}
 			}
 		}
 	}
@@ -98,27 +97,22 @@
 	gap: clamp(24px, 3vw, 60px);
 	height: 100%;
 	padding: clamp(30px, 4vw, 60px);
-	// padding-bottom: 60px;
 	overflow: hidden;
 
 	img {
 		display: flex;
 		width: 100%;
-		// max-width: 500px;
-		// min-width: 500px;
 
 		height: 100%;
 		aspect-ratio: 1/1;
 		object-fit: cover;
 		will-change: transform, opacity;
-		// outline: 1px solid red;
 	}
 
 	&__content {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		// outline: 1px solid red;
 
 		&-title {
 			display: inline-block;

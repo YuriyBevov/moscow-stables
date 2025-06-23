@@ -1,7 +1,21 @@
 section.coach-preview.base-section
-  .container
+  .container-fluid
     .base-section__header
       h2.base-title Наши тренеры
+      p.base-text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas alias error totam perspiciatis odio ut neque eos debitis, aut nihil quo quos unde, magni quas obcaecati minima et. Quam, excepturi.
+
+    .swiper-container
+      .swiper.coach-preview-slider
+        .swiper-wrapper
+          each i in [1,2,3, 1,2,3,1,2,3]
+            .swiper-slide
+              a(href="#").coach-card
+                img(src=`../assets/img/coach-mock${i}.png` alt="" width="600" height="400")
+                .coach-card__content
+                  .coach-card__content-title Константин Константинов
+                  .coach-card__content-text КМС по выездке/ МС по выездке, судья 2-ой категории
+        
+  img(src="../assets/img/coach-bg.png" alt="" width="600" height="400")
 
 
 

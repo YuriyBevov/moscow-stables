@@ -1,109 +1,120 @@
-// .gallery {
-// 	position: relative;
-// 	min-height: 600px;
-// 	background-color: var(--white-color);
+.coach-preview {
+	position: relative;
 
-// 	// CSS переменная для высоты эллипса
-// 	--ellipse-height: 0%;
+	.swiper-container {
+		position: relative;
 
-// 	&::before,
-// 	&::after {
-// 		position: absolute;
-// 		left: 50%;
-// 		transform: translateX(-50%);
-// 		width: 120%;
-// 		height: 140px;
-// 		content: "";
-// 		background-color: var(--dark-color);
-// 		z-index: 10;
-// 	}
+		margin-bottom: 80px;
+		z-index: 20;
+	}
 
-// 	&::before {
-// 		top: -30px;
-// 		// Используем CSS переменную для анимации
-// 		clip-path: ellipse(50% 100% at 50% 0%);
-// 	}
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		transition: all 0.5s ease;
+	}
 
-// 	&::after {
-// 		bottom: -30px;
-// 		clip-path: ellipse(50% 100% at 50% 100%);
-// 	}
+	.swiper-slide-active,
+	.swiper-slide-visible,
+	.swiper-slide-fully-visible {
+		opacity: 1;
+	}
 
-// 	.container {
-// 		position: relative;
-// 		z-index: 2;
-// 	}
-// }
+	.swiper-slide-prev,
+	.swiper-slide-next {
+		opacity: 0.7;
+	}
 
-// .gallery__grid {
-// 	display: grid;
-// 	grid-template-columns: repeat(4, 1fr);
-// 	gap: 5px;
-// 	height: 100%; // Фиксированная высота для overflow
-// 	max-height: 80vh;
-// 	overflow: hidden;
-// 	padding: 20px 0;
-// }
+	& > img {
+		object-fit: contain;
+		width: 100%;
+		max-width: 800px;
+		height: auto;
+		object-position: center;
+		position: absolute;
+		bottom: -80px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 18;
+	}
+}
 
-// .gallery-grid-column {
-// 	position: relative;
-// 	height: 100%;
-// 	overflow: hidden;
+.coach-card {
+	position: relative;
+	width: 100%;
+	max-width: 320px;
+	padding: 8px;
+	background-color: var(--dark-color);
+	backdrop-filter: blur(1px);
 
-// 	// Создаем обертку для бесконечного скролла
-// 	// &::before {
-// 	// 	content: "";
-// 	// 	position: absolute;
-// 	// 	top: 0;
-// 	// 	left: 0;
-// 	// 	right: 0;
-// 	// 	bottom: 0;
-// 	// 	pointer-events: none;
-// 	// 	z-index: 1;
-// 	// }
+	&::before,
+	&::after {
+		position: absolute;
 
-// 	// Контейнер для изображений
-// 	.column-content {
-// 		display: flex;
-// 		flex-direction: column;
-// 		gap: 5px;
-// 		will-change: transform;
-// 	}
+		content: "";
+		background-color: var(--primary-color);
+		width: 50%;
+		height: 50%;
+		z-index: -1;
+		transition: width 0.8s linear, height 0.8s linear;
+	}
 
-// 	// Для четных колонок позиционируем контент снизу
-// 	&:nth-child(even) {
-// 		.column-content {
-// 			align-items: flex-end;
-// 			justify-content: flex-end;
-// 		}
-// 	}
+	&::before {
+		top: 0;
+		left: 0;
+	}
 
-// 	img {
-// 		width: 100%;
-// 		height: auto;
-// 		object-fit: contain;
-// 		border-radius: 12px;
-// 		transition: transform 0.3s ease;
-// 		flex-shrink: 0;
-// 	}
-// }
+	&::after {
+		bottom: 0;
+		right: 0;
+	}
 
-// // Адаптивность
-// @media (max-width: 768px) {
-// 	.gallery__grid {
-// 		grid-template-columns: repeat(2, 1fr);
-// 		gap: 15px;
-// 		// height: 400px;
-// 	}
+	img {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		backdrop-filter: blur(1px);
+		will-change: transform, opacity;
+		transition: transform 0.4s linear;
+	}
 
-// 	.gallery-grid-column img {
-// 		height: auto;
-// 	}
-// }
+	&:hover {
+		img {
+			transform: scale(0.99);
+		}
+	}
 
-// @media (max-width: 480px) {
-// 	.gallery__grid {
-// 		grid-template-columns: 1fr;
-// 		// height: 300px;
-// 	}
-// }
+	&__content {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		padding: 27px 27px;
+		background-color: rgba(255, 192, 70, 0.3);
+		text-align: center;
+
+		&-title {
+			font-size: 20px;
+			font-weight: 700;
+			color: var(--dark-color);
+		}
+
+		&-text {
+			font-size: 16px;
+			color: var(--white-color);
+		}
+	}
+}
+
+.swiper-slide-active .coach-card {
+	&::before,
+	&::after {
+		width: 80%;
+		height: 90%;
+	}
+}
