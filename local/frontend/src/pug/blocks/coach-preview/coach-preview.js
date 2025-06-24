@@ -96,9 +96,9 @@ function initSlider() {
 document.addEventListener("DOMContentLoaded", initSlider);
 
 function animateTitlesOnScroll() {
-	const titles = document.querySelectorAll(".base-title");
+	const titles = document.querySelectorAll(".gsap-animated-title");
 
-	titles.forEach((title) => {
+	titles.forEach((title, index) => {
 		// Создаем копию заголовка
 		const titleCopy = title.cloneNode(true);
 		titleCopy.classList.add("base-title-copy");
@@ -128,10 +128,10 @@ function animateTitlesOnScroll() {
 		gsap.fromTo(
 			titleCopy,
 			{
-				x: "-210%",
+				x: index % 2 === 0 ? "-210%" : "210%",
 			},
 			{
-				x: "110%",
+				x: index % 2 === 0 ? "110%" : "-110%",
 				scrollTrigger: {
 					trigger: wrapper,
 					start: "top bottom", // начало: когда верх блока достигает низа экрана

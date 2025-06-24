@@ -1,5 +1,6 @@
 .coach-preview {
 	position: relative;
+	margin: clamp(80px, 20vw, 240px) 0;
 
 	.swiper-container {
 		position: relative;
@@ -78,13 +79,6 @@
 		object-fit: cover;
 		backdrop-filter: blur(1px);
 		will-change: transform, opacity;
-		transition: transform 0.4s linear;
-	}
-
-	&:hover {
-		img {
-			transform: scale(0.99);
-		}
 	}
 
 	&__content {
