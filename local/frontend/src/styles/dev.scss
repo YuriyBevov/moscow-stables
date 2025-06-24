@@ -2,8 +2,9 @@
 @use "@pug/blocks/about-preview/about";
 @use "@pug/blocks/features/features";
 @use "@pug/blocks/events-preview/events-preview";
-@use "@pug/blocks/gallery-preview/gallery-preview";
+// @use "@pug/blocks/gallery-preview/gallery-preview";
 @use "@pug/blocks/services-preview/services-preview";
 @use "@pug/blocks/horses-preview/horses-preview";
 @use "@pug/blocks/coach-preview/coach-preview";
-@use "@pug/components/static/transition-block/transition-block";
+@use "@pug/blocks/gallery-preview/gallery-preview";
+// @use "@pug/components/static/transition-block/transition-block";
