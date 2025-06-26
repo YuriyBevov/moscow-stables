@@ -1,0 +1,51 @@
+.horses-preview {
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		max-width: 30vw;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		background-image: url("@img/horses-decor-left.png");
+		background-position: top;
+	}
+
+	&::after {
+		top: 200px;
+		right: 0;
+		background-image: url("@img/horses-decor-right.png");
+		background-position: bottom;
+	}
+}
+
+.horses-preview__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 48px;
+}
+
+.horse-preview-card {
+	outline: 1px solid red;
+	&__image {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1/1;
+
+		img {
+			width: 150%;
+			height: 150%;
+			object-fit: contain;
+		}
+	}
+}

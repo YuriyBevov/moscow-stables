@@ -25,6 +25,7 @@ function initSlider() {
 			modifier: 1,
 			slideShadows: false,
 		},
+		initialSlide: 2,
 		slidesPerView: 3,
 		centeredSlides: true,
 		loop: true,
@@ -35,10 +36,8 @@ function initSlider() {
 					opacity: 0,
 					y: 20,
 				});
-
 				const activeSlide = this.slides[this.activeIndex];
 				const contentEl = activeSlide?.querySelector(".coach-card__content");
-
 				if (contentEl) {
 					gsap.to(contentEl, {
 						opacity: 1,
@@ -50,13 +49,11 @@ function initSlider() {
 			},
 
 			slideChangeTransitionStart: function () {
-				isAnimating = true; // 🚫 Начинаем анимацию → блокируем свайп
+				isAnimating = true;
 				this.allowSlideNext = false;
 				this.allowSlidePrev = false;
-
 				const prevSlide = this.slides[this.previousIndex];
 				const prevEl = prevSlide?.querySelector(".coach-card__content");
-
 				if (prevEl) {
 					gsap.to(prevEl, {
 						opacity: 0,
@@ -70,7 +67,6 @@ function initSlider() {
 			slideChangeTransitionEnd: function () {
 				const activeSlide = this.slides[this.activeIndex];
 				const contentEl = activeSlide?.querySelector(".coach-card__content");
-
 				if (contentEl) {
 					gsap.to(contentEl, {
 						opacity: 1,
@@ -93,7 +89,7 @@ function initSlider() {
 	});
 }
 
-document.addEventListener("DOMContentLoaded", initSlider);
+// document.addEventListener("DOMContentLoaded", initSlider);
 
 function animateTitlesOnScroll() {
 	const titles = document.querySelectorAll(".gsap-animated-title");
@@ -151,4 +147,5 @@ function animateTitlesOnScroll() {
 
 document.addEventListener("DOMContentLoaded", () => {
 	animateTitlesOnScroll();
+	initSlider();
 });

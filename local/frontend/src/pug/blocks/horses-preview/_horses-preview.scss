@@ -30,7 +30,7 @@
 	.swiper-container {
 		position: relative;
 		backdrop-filter: blur(10px);
-		// border: 2px solid var(--primary-color);
+		border: 2px solid var(--primary-color);
 
 		&::before {
 			bottom: 15px;
@@ -65,6 +65,7 @@
 			width: fit-content;
 			z-index: 11;
 			background-color: var(--dark-color);
+			// outline: 1px solid red;
 
 			.swiper-button {
 				padding: 5px;
@@ -97,24 +98,27 @@
 	gap: clamp(24px, 3vw, 60px);
 	height: 100%;
 	padding: clamp(30px, 4vw, 60px);
+	// padding-bottom: 60px;
 	overflow: hidden;
 
 	img {
 		display: flex;
 		width: 100%;
+		// max-width: 500px;
+		// min-width: 500px;
 
 		height: 100%;
 		aspect-ratio: 1/1;
 		object-fit: cover;
 		will-change: transform, opacity;
+		// outline: 1px solid red;
 	}
 
 	&__content {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		// margin-left: -200px;
-		// padding-top: 200px;
+		// outline: 1px solid red;
 
 		&-title {
 			display: inline-block;

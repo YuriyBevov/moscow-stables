@@ -111,48 +111,6 @@
 			max-width: 840px;
 			will-change: transform, opacity;
 		}
-
-		&-link {
-			display: flex;
-			width: fit-content;
-			font-size: 1.2em;
-			font-family: var(--secondary-font);
-			color: var(--white-color);
-			position: relative;
-			padding: 15px 24px 10px;
-			will-change: transform;
-			transition: background-color var(--main-transition),
-				opacity var(--main-transition);
-
-			&::before,
-			&::after {
-				position: absolute;
-				content: "";
-				width: 20px;
-				height: 20px;
-			}
-
-			&::before {
-				top: 0;
-				left: 0;
-				border-top: 3px solid var(--danger-color);
-				border-left: 3px solid var(--danger-color);
-			}
-
-			&::after {
-				bottom: 0;
-				right: 0;
-				border-bottom: 3px solid var(--danger-color);
-				border-right: 3px solid var(--danger-color);
-			}
-
-			@media (hover: hover) {
-				&:hover {
-					background-color: var(--dark-color);
-					opacity: 0.8;
-				}
-			}
-		}
 	}
 }
 
@@ -160,4 +118,46 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
+}
+// вынести в отдельное место! это компонент
+.accent-link {
+	display: flex;
+	width: fit-content;
+	font-size: 1.2em;
+	font-family: var(--secondary-font);
+	color: var(--white-color);
+	position: relative;
+	padding: 15px 24px 10px;
+	will-change: transform;
+	transition: background-color var(--main-transition),
+		opacity var(--main-transition);
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		width: 20px;
+		height: 20px;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		border-top: 3px solid var(--danger-color);
+		border-left: 3px solid var(--danger-color);
+	}
+
+	&::after {
+		bottom: 0;
+		right: 0;
+		border-bottom: 3px solid var(--danger-color);
+		border-right: 3px solid var(--danger-color);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--dark-color);
+			opacity: 0.8;
+		}
+	}
 }

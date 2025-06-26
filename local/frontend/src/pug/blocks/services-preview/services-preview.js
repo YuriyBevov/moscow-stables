@@ -32,7 +32,7 @@ function init() {
 			scrollTrigger: {
 				trigger: card,
 				start: "center center",
-				end: "+=70%",
+				end: "+=20%",
 				scrub: true,
 				pin: true,
 				markers: false,
