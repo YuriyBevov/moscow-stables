@@ -4,7 +4,6 @@ import { SplitText } from "gsap/SplitText";
 import Swiper from "swiper";
 import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -12,6 +11,8 @@ function initSlider() {
 	const sliderEl = document.querySelector(".coach-preview-slider");
 
 	if (!sliderEl) return;
+
+	let isAnimating = false;
 
 	const swiper = new Swiper(sliderEl, {
 		modules: [EffectCoverflow],
@@ -34,6 +35,7 @@ function initSlider() {
 			init: function () {
 				gsap.set(".coach-card__content", {
 					opacity: 0,
+					y: 20,
 				});
 				const activeSlide = this.slides[this.activeIndex];
 				const contentEl = activeSlide?.querySelector(".coach-card__content");
@@ -41,6 +43,7 @@ function initSlider() {
 				if (contentEl) {
 					gsap.to(contentEl, {
 						opacity: 1,
+						y: 0,
 						duration: 0.6,
 						ease: "linear",
 					});
@@ -48,23 +51,49 @@ function initSlider() {
 			},
 
 			slideChangeTransitionStart: function () {
-				const prevEl = this.slides[this.previousIndex]?.querySelector(
-					".coach-card__content",
-				);
-				const activeEl = this.slides[this.activeIndex]?.querySelector(
-					".coach-card__content",
-				);
-
-				gsap.to(prevEl, {
-					opacity: 0,
-					duration: 0.3,
-				});
-				gsap.to(activeEl, {
-					opacity: 1,
-					ease: "linear",
-					duration: 0.6,
-				});
+				console.log("test");
 			},
+
+			// slideChangeTransitionStart: function () {
+			// 	isAnimating = true;
+			// 	// this.allowSlideNext = false;
+			// 	// this.allowSlidePrev = false;
+
+			// 	const prevSlide = this.slides[this.previousIndex];
+			// 	const prevEl = prevSlide?.querySelector(".coach-card__content");
+
+			// 	if (prevEl) {
+			// 		gsap.to(prevEl, {
+			// 			opacity: 0,
+			// 			y: 20,
+			// 			duration: 0.6,
+			// 			ease: "linear",
+			// 		});
+			// 	}
+			// },
+
+			// slideChangeTransitionEnd: function () {
+			// 	const activeSlide = this.slides[this.activeIndex];
+			// 	const contentEl = activeSlide?.querySelector(".coach-card__content");
+
+			// 	if (contentEl) {
+			// 		gsap.to(contentEl, {
+			// 			opacity: 1,
+			// 			y: 0,
+			// 			duration: 0.6,
+			// 			ease: "linear",
+			// 			onComplete: () => {
+			// 				isAnimating = false;
+			// 				this.allowSlideNext = true;
+			// 				this.allowSlidePrev = true;
+			// 			},
+			// 		});
+			// 	} else {
+			// 		isAnimating = false;
+			// 		this.allowSlideNext = true;
+			// 		this.allowSlidePrev = true;
+			// 	}
+			// },
 		},
 	});
 }
@@ -117,7 +146,7 @@ function animateTitlesOnScroll() {
 					invalidateOnRefresh: true, // пересчёт высоты при ресайзе
 					onUpdate: (self) => {
 						// По желанию: можешь использовать прогресс здесь
-						// console.log(`Прогресс анимации: ${self.progress.toFixed(2)}`);
+						console.log(`Прогресс анимации: ${self.progress.toFixed(2)}`);
 					},
 				},
 			},

@@ -31,10 +31,10 @@ function init() {
 			ease: "power3.out",
 			scrollTrigger: {
 				trigger: card,
-				start: "center center",
-				end: "+=20%",
+				start: "center bottom",
+				end: "+=100%",
 				scrub: true,
-				pin: true,
+				pin: false,
 				markers: false,
 			},
 		});
@@ -47,8 +47,8 @@ function init() {
 			ease: "power3.out",
 			scrollTrigger: {
 				trigger: content,
-				start: "top +=45%",
-				end: "+=100%",
+				start: "bottom bottom",
+				end: "+=50%",
 				scrub: true,
 				markers: false,
 				onEnter: () => {
